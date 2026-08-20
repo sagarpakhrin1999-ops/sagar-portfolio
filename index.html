@@ -1401,14 +1401,22 @@ src="https://translate.google.com/translate_a/element.js?cb=googleTranslateEleme
 </script>
 
 <script>
-setInterval(function () {
+function changeLanguageText() {
     const select = document.querySelector('.goog-te-combo');
 
-    if (select) {
-        select.options[0].text = 'Select Language';
+    if (select && select.options.length > 0) {
+        select.options[0].textContent = 'Select Language';
     }
-}, 500);
+}
+
+window.addEventListener('load', function () {
+    setTimeout(changeLanguageText, 2000);
+    setTimeout(changeLanguageText, 4000);
+    setTimeout(changeLanguageText, 6000);
+});
 </script>
+
+
 
 </body>
 
